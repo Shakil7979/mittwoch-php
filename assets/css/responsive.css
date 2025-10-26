@@ -1,0 +1,87 @@
+@media all and (min-width: 1199px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media all and (max-width: 1199px) {
+}
+
+@media all and (max-width: 991px) {
+  .single-bio h2 { 
+    font-size: 20px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .right-table {
+    transform: translateY(0);
+    margin-top: 140px;
+  }
+  .menu-card {
+    padding: 15px;
+  }
+
+  .bottom-section {
+    transform: translateY(-0);
+    margin-top: 25px;
+  }
+  .bottom-section h2 {
+    font-size: 22px;
+  }
+  .bird-1 {
+    bottom: -111px;
+  }
+
+  .bird {
+    width: 90px;
+    bottom: -20px;
+  }
+  .border-right-md-none {
+    border: none;
+  }
+  .custom-right-arrow,
+  .custom-left-arrow {
+    position: inherit;
+  }
+  .content-title h4 {
+    font-size: 22px;
+  }
+  .carousel-single h2 {
+    font-size: 30px;
+  }
+  .content-title h2 {
+    font-size: 48px;
+  }
+  .custom-right-arrow img,
+  .custom-left-arrow img {
+    width: 18px !important;
+  }
+
+  .second-section-carousel .owl-nav {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+  }
+}
+
+@media all and (max-width: 575px) {
+    .menu-title {
+        font-size: 38px;  
+    }
+    .bird-1 { 
+        width: 145px;
+    }
+    .nutrition-info h5 { 
+        font-size: 40px; 
+    }
+    .custom-dropdown .dropdown-item {
+	    color: #ffffff !important;
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+}
+
+@media all and (max-width: 450px) {
+}
