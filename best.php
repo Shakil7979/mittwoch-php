@@ -25,7 +25,7 @@
         <div class="container">
             <div class="row justify-content-between align-items-center">
                 <div class="col-3">
-                    <a href="index.html"><img src="assets/images/logo.png" alt="logo"></a>
+                    <a href="index.php"><img src="assets/images/logo.png" alt="logo"></a>
                 </div>
                 <div class="col-9">
                     <div class="header-user-menu">
@@ -157,7 +157,7 @@
     <footer class="footer-area">
         <div class="container">
             <div class="footer-content text-center mb-4">
-                <a href="index.html"><img src="assets/images/bird.png" alt="Bird"></a>
+                <a href="index.php"><img src="assets/images/bird.png" alt="Bird"></a>
                 <ul class="d-flex justify-content-center align-items-center mb-0 gap-3 mt-3 mb-3"> 
                     <?php foreach($footer->links as $link): ?>
                         <li><a href="#"><?php echo $link; ?></a></li>
