@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo json_decode(file_get_contents('content.json'))->bestellung_page->page_title; ?></title>
+    <title><?php echo json_decode(file_get_contents('content.json'))->page_title; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
@@ -15,7 +15,8 @@
     
     <?php 
     $content = json_decode(file_get_contents('content.json'));
-    $bestellung_page = $content->bestellung_page;
+    $header = $content->header;
+    $menu_sections = $content->menu_sections;
     $modal_content = $content->modal_content;
     $footer = $content->footer;
     ?>
@@ -58,9 +59,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12"> 
-                        <div class="content-title text-center"> 
-                            <h2>Bestellung</h2>
-                            <p>für <?php echo $bestellung_page->customer_name; ?></p>
+                        <div class="content-title text-center">
+                            <h4><?php echo $header->title; ?></h4>
+                            <h2><?php echo $header->subtitle; ?></h2>
+                            <p><?php echo $header->date; ?></p>
                         </div>
                     </div>
                 </div>
@@ -68,91 +70,63 @@
         </section>
         <!-- end first section --> 
 
-        <!-- start bestell section -->
-        <section class="bestell-section">
+        <!-- start second section  -->
+        <section class="second-section-content mt-5">
             <div class="container">
-                <div class="menu-card">
-                    <div class="d-flex justify-content-between align-items-start">
-                        <div>
-                            <div class="menu-date">08.06.2022 · <br><span>MONTAG</span></div>
-                            <div class="menu-title"><?php echo $bestellung_page->order_items[0]->name; ?></div>
-                        </div> 
-                    </div>
-
-                    <div class="row mt-4">
-                        <div class="col-md-6 position-relative">
-                            <div class="food-img d-flex align-items-center justify-content-center"> 
-                                <img src="assets/images/page-3.png" alt="Food Image" class="img-fluid rounded">
-                            </div>
-                                <img class="bird-1" src="assets/images/bird-1.png" alt="bird red">
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="right-table"> 
-                                <div class="nutrition-info">
-                                <span class="text-muted small pb-4 d-block">VEGGIE MENU</span>
-                                <h5>Nährwertinfo <img src="assets/images/bird-3.png" alt="Bird 3"></h5>
-                                <p class="text-muted small border-bottom-custom">durchschnittliche Nährwerte pro 100g:</p>
-                                </div>
-    
-                                <table class="table nutrition-table">
-                                <tbody>
-                                    <?php foreach($bestellung_page->order_items as $index => $item): ?>
-                                    <tr>
-                                        <td colspan="4" class="border-0 table-title-text"><?php echo $item->name; ?></td>
-                                    </tr>
-                                    <tr> 
-                                        <td>
-                                            <span><?php echo $bestellung_page->nutrition_labels->calories; ?></span> 
-                                            <span class="table-title-text">
-                                                <?php echo explode(' ', $item->nutrition_info->calories)[0]; ?> 
-                                                <span class="table-title-small">kcal</span>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <span><?php echo $bestellung_page->nutrition_labels->fat; ?></span>
-                                            <?php echo str_replace('g', '', $item->nutrition_info->fat); ?>
-                                            <span class="table-title-small">g</span> 
-                                        </td>
-                                        <td>
-                                            <span><?php echo $bestellung_page->nutrition_labels->carbs; ?></span>
-                                            <?php echo str_replace('g', '', $item->nutrition_info->carbs); ?>
-                                            <span class="table-title-small">g</span> 
-                                        </td>
-                                        <td>
-                                            <span><?php echo $bestellung_page->nutrition_labels->protein; ?></span> 
-                                            <?php echo str_replace('g', '', $item->nutrition_info->protein); ?>
-                                            <span class="table-title-small">g</span> 
-                                        </td>
-                                    </tr>
-                                    <?php endforeach; ?>
-                                </tbody>
-                                </table>
- 
-                                <a href="#" class="btn-custom-2 btn-custom position-relative d-block w-100">
-                                    <img src="assets/images/btn-2.png" alt="Btn 2">
-                                    <span>JETZT KOSTENLOS BESTELLEN</span>
-                                </a>
-                                <p class="small text-center mt-2 text-muted">*Kostenübernahme durch Koch-Card-Bildungskarte</p>
-                            </div>
-
+                <div class="second-section-carousel owl-carousel owl-theme position-relative">
+                    <?php foreach($menu_sections as $index => $section): ?>
+                    <div class="carousel-single text-center">
+                        <img src="assets/images/item-<?php echo ($index % 2) + 1; ?>.png" alt="item-<?php echo ($index % 2) + 1; ?>">
+                        <h4><?php echo $section->section_title; ?> MENÜ</h4>
+                        <?php foreach($section->items as $item_index => $item): ?>
+                            <?php if($item_index == 0): ?>
+                                <p>
+                                    <?php echo $item->name; ?> 
+                                    <?php if(!empty($item->allergens)): ?>
+                                        <sup><?php echo implode(', ', $item->allergens); ?></sup>
+                                    <?php endif; ?>
+                                </p>
+                            <?php elseif($item_index == 1): ?>
+                                <h2>
+                                    <?php echo $item->name; ?> 
+                                    <?php if(!empty($item->allergens)): ?>
+                                        <sup><?php echo implode(', ', $item->allergens); ?></sup>
+                                    <?php endif; ?>
+                                </h2>
+                            <?php else: ?>
+                                <p>
+                                    <?php echo $item->name; ?>
+                                    <?php if(!empty($item->allergens)): ?>
+                                        <sup><?php echo implode(', ', $item->allergens); ?></sup>
+                                    <?php endif; ?>
+                                </p>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                        <div class="item-btn mt-5"> 
+                            <a href="best.php" class="btn-custom position-relative text-center">
+                                <img src="assets/images/btn.png" alt="btn"> 
+                                <span><?php echo $section->order_button; ?></span>
+                            </a>
                         </div>
                     </div>
-
-                    <div class="bottom-section"> 
-                        <h2 class="bottom-text-1">Entdecke jetzt</h2>
-                        <h2 class="bottom-text-2">deine Foodhelden</h2>
-                    </div>
-                    
+                    <?php endforeach; ?>
+                </div>
+                <div class="text-center mx-auto mt-5"> 
+                    <button class="btn-custom position-relative button-show-popup bg-transparent text-center border-0" data-bs-toggle="modal" data-bs-target="#allergenModal">
+                        <img src="assets/images/btn.png" alt="btn"> 
+                        <span class="w-100">Show allergens</span>  
+                    </button>
+                </div>
+                <div class="carousel-bottom-text text-center">
+                    <p>Änderungen bleiben vorbehalten. Referenzbild: Produkt der Abbildung ähnlich</p>
                 </div>
             </div>
         </section>
-        <!-- end bestell section -->
- 
+        <!-- end second section  -->
 
     </main>
-    <!-- end main area  -->  
- 
+    <!-- end main area  -->
+
     <!-- start footer area  -->
     <footer class="footer-area">
         <div class="container">
@@ -169,7 +143,7 @@
     </footer>
     <!-- end footer area  -->
 
-    <!-- Modal -->
+    <!-- Allergen Modal -->
     <div class="modal fade" id="allergenModal" tabindex="-1" aria-labelledby="allergenModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-custom">
             <div class="modal-content bg-white position-relative">
@@ -207,6 +181,7 @@
             </div>
         </div>
     </div>
+ 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
