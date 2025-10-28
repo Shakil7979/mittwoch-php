@@ -19,7 +19,6 @@
     $speisekalender_page = $content->speisekalender_page;
     $modal_content = $content->modal_content;
     $footer = $content->footer;
-    $app_settings = $content->app_settings;
     ?>
 
     <!-- start header area  -->
@@ -32,11 +31,7 @@
                 <div class="col-9">
                     <div class="header-user-menu">
                         <ul class="d-flex justify-content-end align-items-center mb-0 gap-5">
-                            <li>
-                                <a href="index.php" id="viewToggle">
-                                    <img src="assets/images/calendar.png" alt="calendar" id="viewIcon">
-                                </a>
-                            </li>
+                            <li><a href="index.php"><img src="assets/images/date.png" alt="date"></a></li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <img src="assets/images/user.png" alt="User">
@@ -94,10 +89,7 @@
                                 <p><?php echo ($i == 0) ? 'ALL-IN MENÜ' : (($i == 1) ? 'VEGGIE MENÜ' : 'PREMIUM MENÜ'); ?></p>
                                 <?php foreach($day->menu_items as $item_index => $menu_item): ?>
                                     <?php if($item_index == 0): ?>
-                                        <h4>
-                                            <?php echo $menu_item; ?> 
-                                            <sub>10</sub>
-                                        </h4>
+                                        <h4><?php echo $menu_item; ?> <sub>10</sub></h4>
                                     <?php elseif($item_index == 1): ?>
                                         <h2>
                                             <?php 
@@ -112,14 +104,6 @@
                                         <h4><?php echo $menu_item; ?></h4>
                                     <?php endif; ?>
                                 <?php endforeach; ?>
-                                
-                                <!-- Show Allergens Button -->
-                                <div class="mt-3">
-                                    <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#allergenModal">
-                                        <i class="fas fa-info-circle"></i> Show Allergens
-                                    </button>
-                                </div>
-                                
                                 <button class="btn-celender-eye"><i class="fa-solid fa-eye"></i></button>
                                 <div class="single-bio-after">
                                     <img class="celender-eye-img" src="assets/images/celender-eye.png" alt="celender-eye">
@@ -130,16 +114,6 @@
                     </div>
                 </div>
                 <?php endforeach; ?>
-
-                <!-- Show Allergens Button at Bottom -->
-                <?php if($app_settings->show_allergen_button): ?>
-                <div class="text-center mx-auto mt-4"> 
-                    <button class="btn-custom position-relative button-show-popup bg-transparent text-center border-0" data-bs-toggle="modal" data-bs-target="#allergenModal">
-                        <img src="assets/images/btn.png" alt="btn"> 
-                        <span class="w-100"><?php echo $app_settings->allergen_button_text; ?></span>  
-                    </button>
-                </div>
-                <?php endif; ?>
 
                 <div class="celendar-down-button text-center mt-4">
                     <button><img src="assets/images/arrow-down.png" alt="arrow down"></button>
@@ -168,7 +142,7 @@
     </footer>
     <!-- end footer area  -->
 
-    <!-- Allergen Modal -->
+    <!-- Modal -->
     <div class="modal fade" id="allergenModal" tabindex="-1" aria-labelledby="allergenModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-custom">
             <div class="modal-content bg-white position-relative">
@@ -210,27 +184,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // View toggle functionality for header icon
-        document.addEventListener('DOMContentLoaded', function() {
-            const viewToggle = document.getElementById('viewToggle');
-            const viewIcon = document.getElementById('viewIcon');
-            
-            // Speisekalender page থেকে Mittwoch page এ যাওয়ার setup
-            viewToggle.href = 'index.php';
-            viewIcon.src = 'assets/images/calendar.png';
-            viewIcon.alt = 'calendar';
-            
-            // Menu items ক্লিক করলে allergen modal show করার functionality
-            document.querySelectorAll('.single-bio h2, .single-bio h4').forEach(item => {
-                item.style.cursor = 'pointer';
-                item.addEventListener('click', function() {
-                    const modal = new bootstrap.Modal(document.getElementById('allergenModal'));
-                    modal.show();
-                });
-            });
-        });
-    </script>
     <script src="assets/js/scripts.js"></script>
 </body>
 </html>

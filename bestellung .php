@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo json_decode(file_get_contents('content.json'))->speisekalender_page->page_title; ?></title>
+    <title><?php echo json_decode(file_get_contents('content.json'))->bestellung_page->page_title; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
@@ -13,10 +13,9 @@
 </head>
 <body> 
     
-    <?php
-    // JSON ফাইল লোড করা
+    <?php 
     $content = json_decode(file_get_contents('content.json'));
-    $speisekalender_page = $content->speisekalender_page;
+    $bestellung_page = $content->bestellung_page;
     $modal_content = $content->modal_content;
     $footer = $content->footer;
     ?>
@@ -31,7 +30,7 @@
                 <div class="col-9">
                     <div class="header-user-menu">
                         <ul class="d-flex justify-content-end align-items-center mb-0 gap-5">
-                            <li><a href="#"><img src="assets/images/date.png" alt="date"></a></li>
+                            <li><a href="index.php"><img src="assets/images/date.png" alt="date"></a></li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <img src="assets/images/user.png" alt="User">
@@ -50,7 +49,7 @@
             </div>
         </div>
      </header>
-    <!-- end header area  --> 
+    <!-- end header area  -->
 
     <!-- start main area  -->
     <main>
@@ -60,72 +59,100 @@
                 <div class="row">
                     <div class="col-12"> 
                         <div class="content-title text-center"> 
-                            <h2>Speisekalender</h2>
-                            <p><?php echo $speisekalender_page->date_range; ?></p>
+                            <h2>Bestellung</h2>
+                            <p>für <?php echo $bestellung_page->customer_name; ?></p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- end first section -->  
-           
-        <!-- Start calender area  -->
-        <section class="calender-area mt-5 mb-5">
-            <div class="container">
-                <div class="celender-download text-center mb-4 text-md-end">
-                    <a href="#">Download Wochenansicht</a>
-                </div>
-                
-                <?php foreach($speisekalender_page->week_days as $day_index => $day): ?>
-                <div class="Montag-celender-content">
-                    <div class="montag-title-date mb-3 text-center text-md-start">
-                        <p><?php echo $day->date; ?></p>
-                        <h3><?php echo $day->day; ?></h3>
-                    </div>
-                    <div class="row">
-                        <?php for($i = 0; $i < 3; $i++): ?>
-                        <div class="col-md-4">
-                            <div class="single-bio text-center position-relative p-4 mb-4">
-                                <p><?php echo ($i == 0) ? 'ALL-IN MENÜ' : (($i == 1) ? 'VEGGIE MENÜ' : 'PREMIUM MENÜ'); ?></p>
-                                <?php foreach($day->menu_items as $item_index => $menu_item): ?>
-                                    <?php if($item_index == 0): ?>
-                                        <h4><?php echo $menu_item; ?> <sub>10</sub></h4>
-                                    <?php elseif($item_index == 1): ?>
-                                        <h2>
-                                            <?php 
-                                            $menu_text = $menu_item;
-                                            // Replace allergens with sup tags
-                                            $menu_text = str_replace('+', '<sup>A</sup>', $menu_text);
-                                            $menu_text = str_replace('™L', '<sup>R, F, L</sup>', $menu_text);
-                                            echo $menu_text;
-                                            ?>
-                                        </h2>
-                                    <?php else: ?>
-                                        <h4><?php echo $menu_item; ?></h4>
-                                    <?php endif; ?>
-                                <?php endforeach; ?>
-                                <button class="btn-celender-eye"><i class="fa-solid fa-eye"></i></button>
-                                <div class="single-bio-after">
-                                    <img class="celender-eye-img" src="assets/images/celender-eye.png" alt="celender-eye">
-                                </div>
-                            </div>
-                        </div>
-                        <?php endfor; ?>
-                    </div>
-                </div>
-                <?php endforeach; ?>
+        <!-- end first section --> 
 
-                <div class="celendar-down-button text-center mt-4">
-                    <button><img src="assets/images/arrow-down.png" alt="arrow down"></button>
+        <!-- start bestell section -->
+        <section class="bestell-section">
+            <div class="container">
+                <div class="menu-card">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <div class="menu-date">08.06.2022 · <br><span>MONTAG</span></div>
+                            <div class="menu-title"><?php echo $bestellung_page->order_items[0]->name; ?></div>
+                        </div> 
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6 position-relative">
+                            <div class="food-img d-flex align-items-center justify-content-center"> 
+                                <img src="assets/images/page-3.png" alt="Food Image" class="img-fluid rounded">
+                            </div>
+                                <img class="bird-1" src="assets/images/bird-1.png" alt="bird red">
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="right-table"> 
+                                <div class="nutrition-info">
+                                <span class="text-muted small pb-4 d-block">VEGGIE MENU</span>
+                                <h5>Nährwertinfo <img src="assets/images/bird-3.png" alt="Bird 3"></h5>
+                                <p class="text-muted small border-bottom-custom">durchschnittliche Nährwerte pro 100g:</p>
+                                </div>
+    
+                                <table class="table nutrition-table">
+                                <tbody>
+                                    <?php foreach($bestellung_page->order_items as $index => $item): ?>
+                                    <tr>
+                                        <td colspan="4" class="border-0 table-title-text"><?php echo $item->name; ?></td>
+                                    </tr>
+                                    <tr> 
+                                        <td>
+                                            <span><?php echo $bestellung_page->nutrition_labels->calories; ?></span> 
+                                            <span class="table-title-text">
+                                                <?php echo explode(' ', $item->nutrition_info->calories)[0]; ?> 
+                                                <span class="table-title-small">kcal</span>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span><?php echo $bestellung_page->nutrition_labels->fat; ?></span>
+                                            <?php echo str_replace('g', '', $item->nutrition_info->fat); ?>
+                                            <span class="table-title-small">g</span> 
+                                        </td>
+                                        <td>
+                                            <span><?php echo $bestellung_page->nutrition_labels->carbs; ?></span>
+                                            <?php echo str_replace('g', '', $item->nutrition_info->carbs); ?>
+                                            <span class="table-title-small">g</span> 
+                                        </td>
+                                        <td>
+                                            <span><?php echo $bestellung_page->nutrition_labels->protein; ?></span> 
+                                            <?php echo str_replace('g', '', $item->nutrition_info->protein); ?>
+                                            <span class="table-title-small">g</span> 
+                                        </td>
+                                    </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                                </table>
+ 
+                                <a href="#" class="btn-custom-2 btn-custom position-relative d-block w-100">
+                                    <img src="assets/images/btn-2.png" alt="Btn 2">
+                                    <span>JETZT KOSTENLOS BESTELLEN</span>
+                                </a>
+                                <p class="small text-center mt-2 text-muted">*Kostenübernahme durch Koch-Card-Bildungskarte</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="bottom-section"> 
+                        <h2 class="bottom-text-1">Entdecke jetzt</h2>
+                        <h2 class="bottom-text-2">deine Foodhelden</h2>
+                    </div>
+                    
                 </div>
             </div>
         </section>
-        <!-- End calender area  -->
+        <!-- end bestell section -->
  
 
     </main>
-    <!-- end main area  --> 
-
+    <!-- end main area  -->  
+ 
     <!-- start footer area  -->
     <footer class="footer-area">
         <div class="container">

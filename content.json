@@ -1,5 +1,5 @@
 {
-  "page_title": "Mend-Wahl Mittwoch",
+  "page_title": "Mend-Wahl Mittwoch 20. JULI 2022",
   "header": {
     "title": "Mend-Wahl",
     "subtitle": "Mittwoch",
@@ -117,7 +117,16 @@
   "bestellung_page": {
     "page_title": "Bestellung für Max Mustermann",
     "customer_name": "Max Mustermann",
-    "order_items": [ 
+    "order_items": [
+      {
+        "name": "BIO Linseneintopf mit Rindfleisch",
+        "nutrition_info": {
+          "calories": "450 kcal",
+          "carbs": "66g",
+          "protein": "20g",
+          "fat": "15g"
+        }
+      },
       {
         "name": "Gurkensalat",
         "nutrition_info": {
@@ -201,28 +210,6 @@
           "Bio Linseneintopf+ mit Rindfleisch™L",
           "frisches Obst"
         ]
-      }
-    ]
-  },
-  "app_settings": {
-    "show_allergen_button": true,
-    "allergen_button_text": "Show allergens",
-    "max_visible_menus": 2,
-    "enable_horizontal_scroll": true,
-    "date_toggle_enabled": true
-  },
-  "navigation": {
-    "current_view": "mittwoch",
-    "available_views": [
-      {
-        "name": "mittwoch",
-        "display_name": "Mittwoch",
-        "icon": "date.png"
-      },
-      {
-        "name": "speisekalender", 
-        "display_name": "Speisekalender",
-        "icon": "calendar.png"
       }
     ]
   },
