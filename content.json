@@ -144,16 +144,7 @@
           "protein": "100g",
           "fat": "15g"
         }
-      },
-      {
-        "name": "Frisches Obst",
-        "nutrition_info": {
-          "calories": "120 kcal",
-          "carbs": "20g",
-          "protein": "100g",
-          "fat": "15g"
-        }
-      }
+      } 
     ],
     "nutrition_labels": {
       "calories": "Kalorien",
