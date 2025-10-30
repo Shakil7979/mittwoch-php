@@ -11,6 +11,13 @@
   .single-bio h2 { 
     font-size: 20px;
   }
+  .best-table {
+    width: 100%;
+    overflow-x: scroll;
+  }
+  .bl-food-image { 
+    height: auto !important; 
+  }
 }
 
 @media all and (max-width: 767px) {
@@ -40,9 +47,15 @@
   .border-right-md-none {
     border: none;
   }
-  .custom-right-arrow,
+  .custom-right-arrow {
+    position: absolute;
+    top: 19%;
+    right: 10px;
+  }
   .custom-left-arrow {
-    position: inherit;
+    position: absolute;
+    top: 19%;
+    left: 10px;
   }
   .content-title h4 {
     font-size: 22px;
@@ -67,8 +80,15 @@
 }
 
 @media all and (max-width: 575px) {
+    .container {
+      padding: 0 30px;
+    }
     .menu-title {
         font-size: 38px;  
+    }
+    .nutrition-info h5 img { 
+      top: 18px;
+      right: 0;
     }
     .bird-1 { 
         width: 145px;

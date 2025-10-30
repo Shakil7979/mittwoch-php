@@ -5,6 +5,7 @@ body {
   font-size: 1.6rem;
   font-weight: 400;
   font-family: "Europa";
+  background: url(../images/background.png) no-repeat scroll center center / cover;
 }
 h1,
 h2,
@@ -93,6 +94,7 @@ a {
   margin-bottom: 25px;
   padding-bottom: 10px;
   position: relative;
+  margin-top: 15px;
 }
 
 .carousel-single h4::after {
@@ -138,14 +140,18 @@ a {
   font-weight: 700;
   color: #ffffff;
   position: absolute;
-  top: 17px;
+  top: 24px;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
+.button-show-popup span { 
+  top: 21px !important; 
+}
+
 .second-section-carousel.owl-carousel .owl-item img {
-  width: auto !important;
-  margin: 0 auto;
+	width: 250px !important;
+	margin: 0 auto;
 }
 
 .carousel-bottom-text {
@@ -274,9 +280,9 @@ a {
 }
 
 .nutrition-info h5 img {
-  position: absolute;
-  top: 21px;
-  right: 62px;
+	position: absolute;
+	top: 25px;
+	right: 24px;
 }
 
 .nutrition-table {
@@ -448,7 +454,10 @@ a {
 	border: none;
 }
 
-
+.nutrition-table td,
+.nutrition-table th {
+  background: transparent ;
+}
 
 
 
