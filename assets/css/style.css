@@ -90,7 +90,7 @@ a {
 .carousel-single h4 {
   font-size: 14px;
   font-weight: 700;
-  color: #575757;
+  color: #aeaeae;
   margin-bottom: 25px;
   padding-bottom: 10px;
   position: relative;
@@ -112,11 +112,11 @@ a {
 .carousel-single p {
   font-size: 18px;
   font-weight: 400;
-  color: #575757;
+  color: #aeaeae;
 }
 
 .carousel-single h2 {
-  font-size: 33px;
+  font-size: 29px;
   font-weight: 700;
   color: #000000;
   margin: 15px 0;
@@ -159,17 +159,17 @@ a {
 }
 
 .footer-content ul li a {
-  color: #919191;
+  color: #fff;
   font-size: 14px;
   transition: 0.3s;
 }
 
 .footer-content ul li a:hover {
-  color: #000000;
+  opacity: 0.83;
 }
 
 .footer-content p {
-  color: #4e4e4e;
+  color: #fff;
   font-size: 12px;
 }
 
@@ -336,7 +336,7 @@ a {
 .table.nutrition-table span {
   display: block;
   font-size: 16px;
-  color: #666;
+  color: #312e2e;
 }
 
 .table-title-text {
@@ -400,7 +400,7 @@ a {
 }
 
 .single-bio h4 {
-  color: #999999;
+  color: #f7f7f7;
   font-size: 18px;
 }
 
@@ -459,7 +459,63 @@ a {
   background: transparent ;
 }
 
+.modal-of-info {
+	background: #000000da;
+	border-radius: 10px;
+	padding: 20px;
+}
 
+
+.modal-of-info .table.nutrition-table span {
+  font-size: 12px; 
+}
+
+.modal-of-info .table-title-text {
+	font-size: 14px !important; 
+}
+
+.modal-of-info .table.nutrition-table span,
+.modal-of-info table th,
+.modal-of-info table td,
+.modal-of-info .border-bottom-custom ,
+.modal-of-info .nutrition-info h5 { 
+  color: #fff !important;
+} 
+
+.modal-of-info .nutrition-info h5 { 
+	font-size: 42px; 
+}
+
+.food-img-item {
+  max-width: 300px;
+}
+
+.info-btn {
+	background: transparent;
+	border: none;
+}
+
+.info-p {
+  font-size: 12px;
+}
+
+.close-info-modal {
+	background: transparent;
+	top: -6px;
+	right: 5px;
+	border: none;
+	position: absolute;
+	font-size: 20px;
+	color: #ffffff82;
+	z-index: 999;
+}
+
+.carousel-single {
+	background: #fff;
+	border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
+}
 
 
 

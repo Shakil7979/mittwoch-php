@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	$(".second-section-carousel").owlCarousel({
 		items: 3, 
-		margin: 10,  
+		margin: 20,  
 		  nav: true,  
 		navText: [ 
 			`<div class="custom-left-arrow">
@@ -47,6 +47,15 @@ $(document).ready(function(){
 			$(this).find('i').css('color', '#fff');
 		}
 	});
+
+	
+	$(document).on('click', '.info-btn', function() {
+		$('.info-modal-open').show()
+	})
+	
+	$(document).on('click', '.close-info-modal', function() {
+		$('.info-modal-open').hide()
+	})
 
 
 
