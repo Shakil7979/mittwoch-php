@@ -33,6 +33,10 @@
   .modal-of-info .nutrition-info h5 {
     font-size: 24px;
   }
+
+  .info-modal-open .btn-custom-2 span {
+    top: 18px !important; 
+  }
   .info-modal-open {
     position: absolute;
     top: 0;
@@ -40,10 +44,23 @@
     z-index: 99;
     margin: 10px;
     display: none;
+    margin: auto;
+    right: 0;
+    width: 100%;
+    max-width: 320px; 
+  }
+  .text-muted {
+    font-size: 8px !important;
+  }
+  .modal-of-info { 
+    padding-top: 35px;
   }
   .bottom-text-1 {
     transform: translateX(0);
   } 
+  .info-modal-open .table-title-small {
+    font-size: 10px !important;
+  }
   .bottom-text-2 {
     transform: translateX(40px);
   }

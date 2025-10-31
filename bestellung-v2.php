@@ -86,9 +86,8 @@
                     <div class="row mt-4 position-relative info-pad-bottom">
                         <div class="col-md-6 position-relative">
                             <div class="food-img d-flex align-items-center justify-content-center"> 
-                                <img src="assets/images/item-1.png" alt="Food Image" class="img-fluid food-img-item rounded">
-                            </div>
-                                <img class="bird-1" src="assets/images/bird-1.png" alt="bird red">
+                                <img src="assets/images/page-333.png" alt="Food Image" class="max-w-auto img-fluid rounded">
+                            </div> 
                         </div>
 
                         <div class="col-md-6">
