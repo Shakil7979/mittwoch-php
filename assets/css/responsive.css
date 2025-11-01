@@ -106,6 +106,10 @@
     padding-bottom: 150px;
   }
 
+  .modal-custom h5 {
+    font-size: 14px; 
+  }
+
   .menu-card {
     padding: 15px;
   }
@@ -113,6 +117,9 @@
   .bottom-section {
     transform: translateY(-0);
     margin-top: 25px;
+  }
+  .modal-custom li {
+    font-size: 12px; 
   }
   .bottom-section h2 {
     font-size: 22px;
