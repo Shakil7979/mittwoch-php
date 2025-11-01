@@ -21,6 +21,7 @@
     $footer = $content->footer;
     ?>
 
+
     <!-- start header area  -->
      <header class="header-area py-5">
         <div class="container">
@@ -31,12 +32,13 @@
                 <div class="col-9">
                     <div class="header-user-menu">
                         <ul class="d-flex justify-content-end align-items-center mb-0 gap-5">
-                            <li><a href="speisekalender.php"><img src="assets/images/date.png" alt="date"></a></li>
+                            <li><a href="index.php"><img src="assets/images/date.png" alt="date"></a></li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <img src="assets/images/user.png" alt="User">
                                 </a>
                                 <ul class="dropdown-menu custom-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                    <li class="d-md-none d-block close-menu-li"><button class="close-menu"><i class="fas fa-times"></i></button></li>
                                     <li><a class="dropdown-item" href="#">KUNDENKONTO</a></li>
                                     <li><a class="dropdown-item" href="#">MEINE BESTELLUNG</a></li>
                                     <li><a class="dropdown-item" href="#">ABONNEMENT</a></li>

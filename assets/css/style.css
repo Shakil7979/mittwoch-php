@@ -138,17 +138,22 @@ a {
 .btn-custom span {
   font-size: 16px;
   font-weight: 700;
-  color: #ffffff;
-  position: absolute;
-  top: 17px;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  color: #ffffff;  
+	top: 0;
+	font-size: 12px;
+	bottom: 0;
+	margin: auto;
+	position: absolute;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-
-.button-show-popup span { 
-  top: 21px !important; 
-}
-
+ 
 .second-section-carousel.owl-carousel .owl-item img {
 	width: 190px !important;
 	margin: 0 auto;
@@ -356,12 +361,7 @@ a {
   width: 100% !important;
 }
 
-.btn-custom-2 span {
-  text-align: center;
-  width: 100%;
-  top: 22px;
-}
-
+ 
 .table-title-small {
   display: inline-block !important;
   font-size: 14px !important;
@@ -428,17 +428,18 @@ a {
 }
 
 .single-bio-after {
-  background: #262626c4;
-  position: absolute;
-  z-index: 99;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px; 
-  z-index: 1;
-  opacity: 0;
-  visibility: hidden;
+	background: #000000d9;
+	position: absolute;
+	z-index: 99;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 15px;
+	z-index: 1;
+	opacity: 0;
+	visibility: hidden;
+	backdrop-filter: blur(4px);
 }
 
 .single-bio-after .celender-eye-img {
@@ -447,6 +448,7 @@ a {
   left: 0;
   right: 0; 
   margin: 0 auto;   
+  width: 120px;
 }
 
 .celendar-down-button button {
@@ -464,9 +466,10 @@ a {
 }
 
 .modal-of-info {
-	background: #000000da;
+	background: #00000075;
 	border-radius: 10px;
 	padding: 20px;
+	backdrop-filter: blur(15px);
 }
 
 

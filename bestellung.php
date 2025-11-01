@@ -20,6 +20,7 @@
     $footer = $content->footer;
     ?>
 
+
     <!-- start header area  -->
      <header class="header-area py-5">
         <div class="container">
@@ -36,6 +37,7 @@
                                     <img src="assets/images/user.png" alt="User">
                                 </a>
                                 <ul class="dropdown-menu custom-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                    <li class="d-md-none d-block close-menu-li"><button class="close-menu"><i class="fas fa-times"></i></button></li>
                                     <li><a class="dropdown-item" href="#">KUNDENKONTO</a></li>
                                     <li><a class="dropdown-item" href="#">MEINE BESTELLUNG</a></li>
                                     <li><a class="dropdown-item" href="#">ABONNEMENT</a></li>
@@ -82,7 +84,8 @@
                     <div class="row mt-4">
                         <div class="col-md-6 position-relative">
                             <div class="food-img d-flex align-items-center justify-content-center"> 
-                                <img src="assets/images/page-3.png" alt="Food Image" class="img-fluid rounded">
+                                <img src="assets/images/page-333.png" alt="Food Image" class="img-fluid rounded">
+                                <!-- <img src="assets/images/page-3.png" alt="Food Image" class="img-fluid rounded"> -->
                             </div>
                                 <img class="bird-1" src="assets/images/bird-1.png" alt="bird red">
                         </div>

@@ -28,18 +28,15 @@
 @media all and (max-width: 767px) {
   .right-table {
     transform: translateY(0);
-    margin-top: 140px;
+    margin-top: 30px;
   }
   .modal-of-info .nutrition-info h5 {
     font-size: 24px;
   }
-
-  .info-modal-open .btn-custom-2 span {
-    top: 18px !important; 
-  }
+ 
   .info-modal-open {
     position: absolute;
-    top: 0;
+    top: -350px;
     left: 0;
     z-index: 99;
     margin: 10px;
@@ -51,6 +48,9 @@
   }
   .text-muted {
     font-size: 8px !important;
+  }
+  .modal-of-info .nutrition-info h5 {
+    font-size: 20px !important;
   }
   .modal-of-info { 
     padding-top: 35px;
@@ -68,10 +68,29 @@
     top: 5px;
     right: 0;
   }
-  .btn-custom-2 span { 
-    top: 17px;
+  .btn-custom-2 span {  
     font-size: 12px;
   }
+
+
+  .custom-dropdown {
+    background-color: #000000;
+    border: none;
+    border-radius: 0;
+    min-width: 100%; 
+    margin-top: 0 !important;
+    width: 100%;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 100%;
+    transform: inherit !important; 
+    background: #000000bf !important;
+    backdrop-filter: blur(10px); 
+    padding: 100px 74px 50px 74px;
+  }
+
+
   .modal-of-info .table.nutrition-table span,
   .modal-of-info table th,
   .modal-of-info table td,
@@ -111,13 +130,13 @@
   }
   .custom-right-arrow {
     position: absolute;
-    top: 19%;
-    right: 10px;
+    top: 50%;
+    right: -10px;
   }
   .custom-left-arrow {
     position: absolute;
-    top: 19%;
-    left: 10px;
+    top: 50%;
+    left: -10px;
   }
   .content-title h4 {
     font-size: 22px;
@@ -139,6 +158,40 @@
     justify-content: center;
     gap: 35px;
   }
+  
+  .close-menu-li {
+    position: absolute;
+    top: 25px;
+    right: 55px;
+  }
+
+  .carousel-single { 
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 100px;
+  }
+  
+  .close-menu {
+    background: transparent;
+    border: none;
+    color: #aeaeae;
+    font-size: 30px;
+  }
+
+  .carousel-single h4 {
+    margin-top: 83px;
+  }
+  .carousel-single h2 { 
+    margin: 4px 0;
+  }
+
+  .carousel-single > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
 }
 
 @media all and (max-width: 575px) {
@@ -160,7 +213,7 @@
   }
   .custom-dropdown .dropdown-item {
     color: #ffffff !important;
-    padding: 5px 10px;
+    padding:  10px;
     font-size: 14px;
   }
 }

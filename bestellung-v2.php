@@ -36,6 +36,7 @@
                                     <img src="assets/images/user.png" alt="User">
                                 </a>
                                 <ul class="dropdown-menu custom-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                    <li class="d-md-none d-block close-menu-li"><button class="close-menu"><i class="fas fa-times"></i></button></li>
                                     <li><a class="dropdown-item" href="#">KUNDENKONTO</a></li>
                                     <li><a class="dropdown-item" href="#">MEINE BESTELLUNG</a></li>
                                     <li><a class="dropdown-item" href="#">ABONNEMENT</a></li>
@@ -91,9 +92,9 @@
                         </div>
 
                         <div class="col-md-6">
-                            <div class="right-table info-modal-open"> 
-                                <button class="close-info-modal d-md-none d-block"><i class="fas fa-times"></i></button>
-                                <div class="modal-of-info mb-3">
+                            <div class="right-table"> 
+                                <div class="modal-of-info mb-3 info-modal-open">
+                                    <button class="close-info-modal d-md-none d-block"><i class="fas fa-times"></i></button>
                                     <div class="nutrition-info"> 
                                         <h5>Nährwertinfo <img src="assets/images/bird-3.png" alt="Bird 3"></h5>
                                         <p class="text-muted small border-bottom-custom">durchschnittliche Nährwerte pro 100g:</p>

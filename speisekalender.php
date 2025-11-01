@@ -37,6 +37,7 @@
                                     <img src="assets/images/user.png" alt="User">
                                 </a>
                                 <ul class="dropdown-menu custom-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                    <li class="d-md-none d-block close-menu-li"><button class="close-menu"><i class="fas fa-times"></i></button></li>
                                     <li><a class="dropdown-item" href="#">KUNDENKONTO</a></li>
                                     <li><a class="dropdown-item" href="#">MEINE BESTELLUNG</a></li>
                                     <li><a class="dropdown-item" href="#">ABONNEMENT</a></li>
@@ -50,7 +51,7 @@
             </div>
         </div>
      </header>
-    <!-- end header area  --> 
+    <!-- end header area  -->
 
     <!-- start main area  -->
     <main>
@@ -106,7 +107,7 @@
                                 <?php endforeach; ?>
                                 <button class="btn-celender-eye"><i class="fa-solid fa-eye"></i></button>
                                 <div class="single-bio-after">
-                                    <img class="celender-eye-img" src="assets/images/celender-eye.png" alt="celender-eye">
+                                    <img class="celender-eye-img" src="assets/images/item-1.png" alt="celender-eye">
                                 </div>
                             </div>
                         </div>
