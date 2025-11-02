@@ -442,6 +442,11 @@ a {
 	backdrop-filter: blur(4px);
 }
 
+.cart-btn {
+	left: 5px;
+	right: inherit !important;
+}
+
 .single-bio-after .celender-eye-img {
   position: absolute;
   top: -10px;

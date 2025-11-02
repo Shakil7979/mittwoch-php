@@ -38,6 +38,7 @@ $(document).ready(function(){
 				
 			});
 			$(this).find('i').css('color', '#000');
+			$(this).siblings('.cart-btn').find('i').css('color', '#000');
 		} else {
 			// show
 			$target.css({
@@ -45,6 +46,7 @@ $(document).ready(function(){
 				"visibility": "visible"
 			});
 			$(this).find('i').css('color', '#fff');
+			$(this).siblings('.cart-btn').find('i').css('color', '#fff');
 		}
 	});
 

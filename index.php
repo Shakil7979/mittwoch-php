@@ -32,7 +32,7 @@
                 <div class="col-9">
                     <div class="header-user-menu">
                         <ul class="d-flex justify-content-end align-items-center mb-0 gap-5">
-                            <li><a href="index.php"><img src="assets/images/date.png" alt="date"></a></li>
+                            <li><a href="speisekalender.php"><img src="assets/images/date.png" alt="date"></a></li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <img src="assets/images/user.png" alt="User">
