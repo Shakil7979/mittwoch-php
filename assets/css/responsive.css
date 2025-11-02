@@ -5,11 +5,17 @@
 }
 
 @media all and (max-width: 1199px) {
+  .single-bio h2 { 
+    font-size: 27px;
+  }
 }
 
 @media all and (max-width: 991px) {
   .single-bio h2 {
     font-size: 20px;
+  }
+  .single-bio-after .celender-eye-img { 
+    width: 196px;
   }
   .best-table {
     width: 100%;
@@ -32,6 +38,9 @@
   }
   .modal-of-info .nutrition-info h5 {
     font-size: 24px;
+  }
+  .single-bio-after .celender-eye-img {
+    width: 180px;
   }
  
   .info-modal-open {
@@ -101,7 +110,7 @@
   .modal-of-info .table-title-text {
     font-size: 12px !important;
   }
-
+ 
   .info-pad-bottom {
     padding-bottom: 150px;
   }
@@ -204,7 +213,7 @@
 @media all and (max-width: 575px) {
   .container {
     padding: 0 30px;
-  }
+  } 
   .menu-title {
     font-size: 34px;
   }
@@ -226,4 +235,7 @@
 }
 
 @media all and (max-width: 450px) {
+  .single-bio-after .celender-eye-img {
+    width: 205px;
+  }
 }
