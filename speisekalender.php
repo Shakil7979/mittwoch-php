@@ -105,7 +105,7 @@
                                         <h4><?php echo $menu_item; ?></h4>
                                     <?php endif; ?>
                                 <?php endforeach; ?>
-                                <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i></button>
+                                <a href="bestellung-v2.php" class="cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>
                                 <button class="btn-celender-eye"><i class="fa-solid fa-eye"></i></button>
                                 <div class="single-bio-after">
                                     <img class="celender-eye-img" src="assets/images/food.png" alt="celender-eye">

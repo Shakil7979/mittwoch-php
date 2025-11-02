@@ -413,6 +413,7 @@ a {
 	font-size: 32px;
 }
 
+.single-bio a,
 .single-bio button {
 	border: none;
 	background: transparent;
@@ -444,6 +445,7 @@ a {
 
 .cart-btn {
 	left: 5px;
+  color: #000;
 	right: inherit !important;
 }
 
